@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="WSDL_CALC_MS" targetNamespace="http://tempuri.org/WSDL_CALC_MS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/WSDL_CALC_MS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="WSDL_CALC_MSSOAP_HTTP_Binding" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/WSDL_CALC_MS" xmlns:mrm="http://tempuri.org/WSDL_CALC_MS">
+<xsd:include schemaLocation="WSDL_CALC_MDFN.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Op_MULTI_in">
+    <wsdl:part element="tns:MULTI" name="MULTI"/>
+  </wsdl:message>
+  <wsdl:message name="Op_MULTI_out">
+    <wsdl:part element="tns:CALC_MULTI" name="CALC_MULTI"/>
+  </wsdl:message>
+  <wsdl:message name="Op_MULTI_fault1">
+    <wsdl:part element="tns:Fault" name="Fault"/>
+  </wsdl:message>
+  <wsdl:message name="Op_SUB_in">
+    <wsdl:part element="tns:SUB" name="SUB"/>
+  </wsdl:message>
+  <wsdl:message name="Op_SUB_out">
+    <wsdl:part element="tns:CALC_SUB" name="CALC_SUB"/>
+  </wsdl:message>
+  <wsdl:message name="Op_SUB_fault1">
+    <wsdl:part element="tns:Fault" name="Fault"/>
+  </wsdl:message>
+  <wsdl:message name="Op_DIVISION_in">
+    <wsdl:part element="tns:DIVISION" name="DIVISION"/>
+  </wsdl:message>
+  <wsdl:message name="Op_DIVISION_out">
+    <wsdl:part element="tns:CALC_DIVISION" name="CALC_DIVISION"/>
+  </wsdl:message>
+  <wsdl:message name="Op_DIVISION_fault1">
+    <wsdl:part element="tns:Fault" name="Fault"/>
+  </wsdl:message>
+  <wsdl:message name="Op_ADD_in">
+    <wsdl:part element="tns:ADD" name="ADD"/>
+  </wsdl:message>
+  <wsdl:message name="Op_ADD_out">
+    <wsdl:part element="tns:CALC_ADD" name="CALC_ADD"/>
+  </wsdl:message>
+  <wsdl:message name="Op_ADD_fault1">
+    <wsdl:part element="tns:Fault" name="Fault"/>
+  </wsdl:message>
+  <wsdl:portType name="WSDL_CALC_MSPortType">
+    <wsdl:operation name="Op_MULTI">
+      <wsdl:input message="tns:Op_MULTI_in" name="Op_MULTI_Input"/>
+      <wsdl:output message="tns:Op_MULTI_out" name="Op_MULTI_Output"/>
+      <wsdl:fault message="tns:Op_MULTI_fault1" name="Op_MULTI_Fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Op_SUB">
+      <wsdl:input message="tns:Op_SUB_in" name="Op_SUB_Input"/>
+      <wsdl:output message="tns:Op_SUB_out" name="Op_SUB_Output"/>
+      <wsdl:fault message="tns:Op_SUB_fault1" name="Op_SUB_Fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Op_DIVISION">
+      <wsdl:input message="tns:Op_DIVISION_in" name="Op_DIVISION_Input"/>
+      <wsdl:output message="tns:Op_DIVISION_out" name="Op_DIVISION_Output"/>
+      <wsdl:fault message="tns:Op_DIVISION_fault1" name="Op_DIVISION_Fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="Op_ADD">
+      <wsdl:input message="tns:Op_ADD_in" name="Op_ADD_Input"/>
+      <wsdl:output message="tns:Op_ADD_out" name="Op_ADD_Output"/>
+      <wsdl:fault message="tns:Op_ADD_fault1" name="Op_ADD_Fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDL_CALC_MSSOAP_HTTP_Binding" type="tns:WSDL_CALC_MSPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Op_MULTI">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Op_MULTI_Input">
+        <soap:body parts="MULTI" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Op_MULTI_Output">
+        <soap:body parts="CALC_MULTI" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Op_MULTI_Fault">
+        <soap:fault name="Op_MULTI_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Op_SUB">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Op_SUB_Input">
+        <soap:body parts="SUB" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Op_SUB_Output">
+        <soap:body parts="CALC_SUB" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Op_SUB_Fault">
+        <soap:fault name="Op_SUB_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Op_DIVISION">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Op_DIVISION_Input">
+        <soap:body parts="DIVISION" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Op_DIVISION_Output">
+        <soap:body parts="CALC_DIVISION" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Op_DIVISION_Fault">
+        <soap:fault name="Op_DIVISION_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Op_ADD">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="Op_ADD_Input">
+        <soap:body parts="ADD" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Op_ADD_Output">
+        <soap:body parts="CALC_ADD" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Op_ADD_Fault">
+        <soap:fault name="Op_ADD_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSDL_CALC_MSSOAP_HTTP_Service">
+    <wsdl:port binding="tns:WSDL_CALC_MSSOAP_HTTP_Binding" name="WSDL_CALC_MSSOAP_HTTP_Port">
+      <soap:address location="http://localhost:7800/WSDL_CALC_MSSOAP_HTTP_Service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

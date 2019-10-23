@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="Num1" type="xsd:decimal"/>
+  <xsd:element name="Num2" type="xsd:decimal"/>
+  <xsd:element name="R" type="xsd:decimal"/>
+  <xsd:element name="Fcode" type="xsd:string"/>
+  <xsd:element name="Fmsg" type="xsd:string"/>
+  <xsd:complexType name="ADD">
+    <xsd:sequence>
+      <xsd:element ref="Num1"/>
+      <xsd:element ref="Num2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SUB">
+    <xsd:sequence>
+      <xsd:element ref="Num1"/>
+      <xsd:element ref="Num2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MULTI">
+    <xsd:sequence>
+      <xsd:element ref="Num1"/>
+      <xsd:element ref="Num2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DIVISION">
+    <xsd:sequence>
+      <xsd:element ref="Num1"/>
+      <xsd:element ref="Num2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CALC_ADD">
+    <xsd:sequence>
+      <xsd:element ref="R"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CALC_SUB">
+    <xsd:sequence>
+      <xsd:element ref="R"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CALC_MULTI">
+    <xsd:sequence>
+      <xsd:element ref="R"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CALC_DIVISION">
+    <xsd:sequence>
+      <xsd:element ref="Num2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Fault">
+    <xsd:sequence>
+      <xsd:element ref="Fcode"/>
+      <xsd:element ref="Fcode"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ADD" type="ADD">
+  </xsd:element>
+  <xsd:element name="SUB" type="SUB">
+  </xsd:element>
+  <xsd:element name="MULTI" type="MULTI">
+  </xsd:element>
+  <xsd:element name="DIVISION" type="DIVISION">
+  </xsd:element>
+  <xsd:element name="CALC_ADD" type="CALC_ADD">
+  </xsd:element>
+  <xsd:element name="CALC_SUB" type="CALC_SUB">
+  </xsd:element>
+  <xsd:element name="CALC_MULTI" type="CALC_MULTI">
+  </xsd:element>
+  <xsd:element name="CALC_DIVISION" type="CALC_DIVISION">
+  </xsd:element>
+  <xsd:element name="Fault" type="Fault">
+  </xsd:element>
+</xsd:schema>

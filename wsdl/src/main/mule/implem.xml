@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="implemFlow" doc:id="5340391b-5402-4c80-b377-8a0c040569c3" >
+		<ee:transform doc:name="Transform Message" doc:id="4eddf2f4-8afb-4247-8a31-1f1e63622fd5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns1 http://schemas.xmlsoap.org/soap/envelope/
+ns ns2 http://tempuri.org/WSDL_CALC_MS
+var num1 = payload.body.ns2#ADD.ns2#Num1 default 0
+var num2 = payload.body.ns2#ADD.ns2#Num2 default 0
+output application/xml
+---
+{
+	ns1#Envelope:
+	{
+		ns1#Body:
+		{
+			ns2#CALC_ADD:
+			{
+				ns2#R: (num1 + num2)
+			}
+		}
+		
+	}
+	
+	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
